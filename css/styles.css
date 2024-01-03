@@ -1,0 +1,39 @@
+body {
+            background-color: lightblue;
+            color:maroon;
+}
+h1 {
+           color: maroon;
+}
+h2 {
+           color: maroon;
+}
+h3 {
+           color: maroon;
+}
+h4 {
+           color: maroon;
+}
+
+p {
+           margin-left: 420px;
+}
+
+.button {
+           background-color: #04AA6D; /* Green */
+           border: none;
+           color: white;
+           padding: 15px 32px;
+           text-align: center;
+           text-decoration: none;
+           display: inline-block;
+           font-size: 16px;
+           margin: 4px 2px;
+           cursor: pointer;
+}
+.button2 {background-color: #008CBA; width: 250px; border-radius: 12px;} /* Blue */
+.button3 {background-color: #542835; width: 250px; border-radius: 12px;} /* Red */ 
+.button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
+.button5 {background-color: #555555;} /* Black */
+    
+
