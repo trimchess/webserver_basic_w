@@ -7,6 +7,7 @@ import lib.LED as led
 from lib.file_reader import read_file
 from lib.html_helper import write_header, write_css_header
 
+# global definitions
 app = web.App(host='0.0.0.0', port=80)
 onboard = Pin('LED', Pin.OUT)
 onboard.off()
@@ -15,6 +16,7 @@ button20 = Pin(20, Pin.IN)
 button21 = Pin(21, Pin.IN)
 button22 = Pin(22, Pin.IN)
 
+# routes
 @app.route('/')
 async def index_handler(r, w):
     write_header(w)
