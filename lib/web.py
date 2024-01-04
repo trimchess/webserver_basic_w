@@ -4,20 +4,6 @@ from binascii import b2a_base64
 import struct
 from lib.file_reader import read_file
 
-#page_not_found = '''
-#<!DOCTYPE html>
-#<html>
-#<head> <title>Pico W</title>
-#<link rel="stylesheet" href="/css/my.css">
-#</head>
-#<body> <h1>Page not found!</h1>
-#<p><a href="/index.html">Go back to Main Page</a></p>
-#</body>
-#</html>
-#'''
-#
-#page_not_found =read_file('/html/error_404.html.html')
-
 def unquote_plus(s):
     out = []
     i = 0
@@ -114,8 +100,6 @@ class App:
             await handler(r, w)
             await w.wait_closed()
             return
-        #await w.awrite(b'HTTP/1.0 404 Not Found\r\n\r\nNot Found')
-        #await w.awrite(page_not_found)
         await w.awrite(read_file('/html/error_404.html'))
         await w.wait_closed()
 
