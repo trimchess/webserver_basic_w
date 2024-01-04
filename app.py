@@ -1,4 +1,5 @@
 import asyncio 
+from time import sleep
 from machine import Pin, ADC
 import lib.wifi_connect as wifi_cnt
 import lib.web as web
@@ -131,8 +132,12 @@ async def main():
 if __name__ == '__main__':
     html_p_1 = read_file('/html/index.html')
     styles_css = read_file('/css/styles.css')
-
-    wifi_cnt.connect_to_network(wifi_conf.SSID, wifi_conf.PSK, wifi_conf.COUNTRY)
+    try:
+        wifi_cnt.connect_to_network(wifi_conf.SSID, wifi_conf.PSK, wifi_conf.COUNTRY)
+    except RuntimeError as e:
+        print(f'{e}, server halted')
+        while (1):
+            sleep(1)
     try:
         asyncio.run(main())
     except:
